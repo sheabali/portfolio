@@ -97,7 +97,6 @@ async function run() {
     app.post('/api/v1/create-project', async (req, res) => {
       try {
         const data = req.body; // No need for 'await' here
-        console.log('data', data);
 
         // Add timestamp to the data object
         data.timestamp = new Date();
@@ -124,7 +123,6 @@ async function run() {
     app.get('/api/v1/projects/:id', async (req, res) => {
       try {
         const { id } = req.params;
-        console.log(id);
 
         if (!ObjectId.isValid(id)) {
           return res.status(400).json({ message: 'Invalid project ID' });
@@ -305,7 +303,6 @@ async function run() {
     app.get('/api/v1/blogs/:id', async (req, res) => {
       try {
         const { id } = req.params;
-        console.log(id);
 
         if (!ObjectId.isValid(id)) {
           return res.status(400).json({ message: 'Invalid blog ID' });
